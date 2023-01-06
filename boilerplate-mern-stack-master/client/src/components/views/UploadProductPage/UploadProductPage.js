@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Typography, Button, Form, Input } from 'antd';
 import FileUpload from '../../utils/FileUpload';
-
 const { TextArea } = Input;
 
 const Continents = [
