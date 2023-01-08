@@ -74,7 +74,11 @@ function LandingPage() {
         </Col>
     })
 
-    
+    const handleFilters = () => {
+        
+
+
+    }
 
 
 
@@ -89,7 +93,7 @@ function LandingPage() {
 
 
             {/* CheckBox */}
-                <Checkbox list={continents} />
+                <Checkbox list={continents} handleFilters={filter => handleFilters(filters, "continents")} />
 
             {/* RadioBox */}
 
