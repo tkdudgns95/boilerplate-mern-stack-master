@@ -32,12 +32,22 @@ const productSchema = mongoose.Schema({
     type: Number,
     default: 1
    },
-   
+
    views: {
     type:Number,
     default: 0
    }
 }, { timestamps: true})
+
+productSchema.index({
+    title:'text',
+    description:'tex'
+}, {
+    weights: {
+        title: 5,
+        description: 1
+    }
+})
 
 
 const Product = mongoose.model('Product', userSchema);
