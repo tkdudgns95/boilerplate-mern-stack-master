@@ -9,7 +9,7 @@ function DetailProductPage(props) {
 
     const productId = props.match.params.productId
 
-    const [Product, setProduct] = useState(initialState)
+    const [Product, setProduct] = useState({})
 
     useEffect(() => {
 
