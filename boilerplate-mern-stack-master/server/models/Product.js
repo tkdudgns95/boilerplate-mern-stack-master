@@ -2,54 +2,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const productSchema = mongoose.Schema({
-   writer: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-   },
-   title: {
-    type: String,
-    maxlength: 50
-   },
-   description:{
-    type: String,
-   },
-   price: {
-        type: Number,
-        default: 0
-   },
-   images: {
-    type: Array,
-    default: []
-   },
-   sold: {
-    type: Number,
-    maxlength: 100,
-    default: 0
-   },
-
-   continents: {
-    type: Number,
-    default: 1
-   },
-
-   views: {
-    type:Number,
-    default: 0
-   }
-}, { timestamps: true})
-
-productSchema.index({
-    title:'text',
-    description:'tex'
-}, {
-    weights: {
-        title: 5,
-        description: 1
+const paymentSchema = mongoose.Schema({
+    user: {
+        type: Array,
+        default: []
+    },
+    data: {
+        type: Array,
+        default: []
+    },
+    product: {
+        type: Array,
+        default: []
     }
-})
+   
+}, { timestamps: true })
 
+const Payment = mongoose.model('Payment', paymentSchema);
 
-const Product = mongoose.model('Product', userSchema);
-
-module.exports = { Product }
+module.exports = { Payment }
