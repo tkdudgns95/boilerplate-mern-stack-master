@@ -77,8 +77,12 @@ return (
         
         }
 
-        <Paypal />
+        {ShowTotal &&
 
+          <Paypal 
+            total={Total}
+          />
+        }
 
     </div>
     )
